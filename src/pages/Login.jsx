@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { AiFillEyeInvisible } from "react-icons/ai";
-import { MdVisibility } from "react-icons/md";
+import { MdVisibility } from 'react-icons/md';
 import { FaSignInAlt } from 'react-icons/fa';
 
 function Login() {
@@ -102,6 +102,12 @@ function Login() {
             </div>
           )}
         </form>
+        <div className="text-center mt-6 text-gray-400">
+          Don't have an account?
+          <Link to="/register" className="text-blue-400 hover:underline ml-1 font-semibold">
+            Register now
+          </Link>
+        </div>
       </div>
     </div>
   );
