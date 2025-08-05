@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "proxy": "http://185.191.141.200:7000",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.11.0",

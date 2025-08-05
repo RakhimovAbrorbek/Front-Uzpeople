@@ -15,7 +15,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://185.191.141.200:7000/api/session/login', {
+      const res = await fetch('/api/session/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -26,7 +26,7 @@ function Login() {
       if (!access_token || !id) throw new Error('Missing token or user ID');
       localStorage.setItem('access_token', access_token);
       localStorage.setItem('role', role);
-      await fetch(`http://185.191.141.200:7000/api/users/changeLogin/${id}`, {
+      await fetch(`/api/users/changeLogin/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

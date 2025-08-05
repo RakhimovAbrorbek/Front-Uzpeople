@@ -21,7 +21,7 @@ export default function UsersPage() {
   }, [userRole, navigate]);
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get("http://185.191.141.200:7000/api/users", {
+      const { data } = await axios.get("/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(data.filter(user => user.role === "user"));
@@ -38,9 +38,9 @@ export default function UsersPage() {
 
   const handleAction = async (action) => {
     const endpointMap = {
-      block: (id) => `http://185.191.141.200:7000/api/users/block/${id}`,
-      unblock: (id) => `http://185.191.141.200:7000/api/users/unblock/${id}`,
-      delete: (id) => `http://185.191.141.200:7000/api/users/${id}`,
+      block: (id) => `/api/users/block/${id}`,
+      unblock: (id) => `/api/users/unblock/${id}`,
+      delete: (id) => `/api/users/${id}`,
     };
 
     for (let id of selectedUsers) {

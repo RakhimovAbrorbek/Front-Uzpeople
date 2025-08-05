@@ -29,7 +29,7 @@ function Register() {
     try {
       setPasswordError('');
       setServerResponse('Submitting...');
-      const { data } = await axios.post('http://185.191.141.200:7000/api/session/register', formData);
+      const { data } = await axios.post('/api/session/register', formData);
       setServerResponse(`${data.message || "Successfully registered!"}`);
       setTimeout(() => {
         navigate("/login")
