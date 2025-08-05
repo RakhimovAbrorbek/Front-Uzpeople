@@ -3,6 +3,10 @@
     {
       "source": "/api/:match*",
       "destination": "http://185.191.141.200:7000/api/:match*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
